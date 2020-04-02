@@ -12,15 +12,22 @@
     <div>
         <h2>MovieFlix CRUD</h2>
     <?php
+
+    // Store each database info in variable
+
         $servername = "localhost" ;
         $username = "root";
         $password = "";
         $database = "movieflix_database";
-        
+
+    // Connect to database
         $con = mysqli_connect($servername, $username, $password, $database);
+
+    // Query to select data from database
         $sql = "SELECT * FROM movieflix_table";
-        $connect = mysqli_query($con, $sql);
-        $rowCount =mysqli_num_rows($connect);
+
+        $connect = mysqli_query($con, $sql); //  To connect
+        $rowCount =mysqli_num_rows($connect); // To count rows
 
         if($rowCount > 0)
         {
@@ -53,6 +60,7 @@
     </div>
 
                 <div class="content-wrapper">
+                    
                     <button id="create-button">Crete Record</button>
                     <button id="update-button">Edit Record </button>
                     <button id="delete-record">Delete Record</button><br/><br/><br/>
@@ -83,5 +91,6 @@
                 </div>
             </div>
     <script src="script.js"></script>
+    
 </body>
 </html>
